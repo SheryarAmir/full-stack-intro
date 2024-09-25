@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";  
+import prisma from "../lib/prisma";  
 import Post from "./components/Post"// Assuming prisma is set up correctly
 import Link from "next/link";
 
@@ -22,13 +22,13 @@ export default async function Home() {
   return (
     <div className="">
       <main>
-          <Link href={'/add-post'}>Add Post</Link>
-        <h1>Feed</h1>
+         <Link href={'/add-post'} className=" border p-3 hover:bg-orange-600"> Click Add You Fav Post</Link>
+        <h1 className=" mt-10"> New Feed Post</h1>
         
          {
           posts.map((post)=>{
             return (
-              <Post
+              <Post 
               key={post.id}
               id={post.id}
               title={post.title}
